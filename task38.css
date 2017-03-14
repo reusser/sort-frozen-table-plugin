@@ -2,7 +2,42 @@
   padding: 0;
   margin: 0;
 }
-table {
+.sort-table {
   border-collapse: collapse;
   text-align: center;
+  border: 1px solid #000;
+}
+.sort-table th,
+.sort-table td {
+  border: 1px solid #000;
+}
+
+.sort-table-arrow-box {
+  display: inline-block;
+  width: 12px;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: top;
+}
+.sort-table-up-arrow {
+  display: block;
+  width: 0px;
+  height: 0px;
+  margin-bottom: 2px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #000;
+}
+.sort-table-down-arrow {
+  display: block;
+  width: 0px;
+  height: 0px;
+  margin-bottom: 2px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #000;
+}
+.sort-table th,
+.sort-table td {
+  width: 100px;
 }

@@ -8,11 +8,11 @@ let config = {
   //表格宽度
   tableWidth: '600px',
   //表格高度
-  tableHeight: '600px',
+  tableHeight: '300px',
   //表头
   th: ['姓名', '高数', '线代', '概率论', '离散数学', '数据结构'],
   //设置要排序的表头 0为不排序，1为要排序。 按th中的索引位置依次设置
-  sortSwitch: [0, 1, 1, 1, 1, 1],
+  sortSwitch: [0, 0, 1, 1, 1, 1],
   //设置每行的内容
   tr: [
         ['oyh',     '71', '83', '75', '91', '87'],
@@ -23,12 +23,8 @@ let config = {
   ],
   //是否为排序表格 false则不添加排序功能
   isSort: true,
-  //是否为表格设置class名
-  isClass: false,
   //class名
-  className: '',
-  //是否为表格设置id名
-  isId: false,
+  className: 'sort-table',
   //id名
   id: ''
 }
