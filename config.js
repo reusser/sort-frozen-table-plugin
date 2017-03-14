@@ -12,7 +12,7 @@ let config = {
   //表头
   th: ['姓名', '高数', '线代', '概率论', '离散数学', '数据结构'],
   //设置要排序的表头 0为不排序，1为要排序。 按th中的索引位置依次设置
-  sortSwitch: [0, 0, 1, 1, 1, 1],
+  sortSwitch: [0, 1, 1, 1, 1, 1],
   //设置每行的内容
   tr: [
         ['oyh',     '71', '83', '75', '91', '87'],
@@ -23,7 +23,9 @@ let config = {
   ],
   //是否为排序表格 false则不添加排序功能
   isSort: true,
-  //class名
+  //是否开启首行冻结 true开启 false关闭
+  isFrozen: true,
+  //class名 自定义class名请在默认类型名后添加 如 'sort-table my-table' 否则可能会导致默认样式无法应用
   className: 'sort-table',
   //id名
   id: ''

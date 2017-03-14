@@ -3,15 +3,24 @@
   margin: 0;
 }
 .sort-table {
+  position: relative;
   border-collapse: collapse;
   text-align: center;
-  border: 1px solid #000;
 }
 .sort-table th,
 .sort-table td {
-  border: 1px solid #000;
+  width: 16.667%;
+  border: 2px solid #ccc;
 }
-
+.sort-table tr th {
+  background-color: #000;
+  color: #fff;
+}
+.sort-table tr:nth-of-type(1) {
+  position: relative;
+  top: 0;
+  display: table-row;
+}
 .sort-table-arrow-box {
   display: inline-block;
   width: 12px;
@@ -26,7 +35,7 @@
   margin-bottom: 2px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 10px solid #000;
+  border-bottom: 10px solid #fff;
 }
 .sort-table-down-arrow {
   display: block;
@@ -35,9 +44,5 @@
   margin-bottom: 2px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 10px solid #000;
-}
-.sort-table th,
-.sort-table td {
-  width: 100px;
+  border-top: 10px solid #fff;
 }

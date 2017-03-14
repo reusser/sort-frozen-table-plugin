@@ -11,7 +11,7 @@ class Table {
     this.sortSwitch  = config.sortSwitch;
     this.className   = config.className;
     this.id          = config.id;
-    this.isAdapt     = config.isAdapt;
+    this.isFrozen    = config.isFrozen;
     this.init();
   }
 
@@ -21,6 +21,7 @@ class Table {
     this.container.appendChild(this.selfElement);
     this.renderTr();
     this.setStyle();
+    this.fixedTop();
   }
 
   addTh() {
@@ -52,7 +53,7 @@ class Table {
 
     let ths = document.getElementsByTagName('th');
 
-    Array.from(ths).every( (item, index) => {console.log(1)
+    Array.from(ths).every( (item, index) => {
       let nowIndex = index;
       if (this.sortSwitch[index] === 0) return true;
 
@@ -93,11 +94,45 @@ class Table {
 
     this.tr.sort( (a, b) => {
       return b[index] - a[index];
-    } );console.log(1);
+    } );
 
     this.renderTr();
   }
 
+  fixedTop () {
+    if (!this.isFrozen) return;
+    let [thOne] = Array.from(document.getElementsByTagName('th'));
+    let height  = window.getComputedStyle(thOne, null).getPropertyValue('height');
+    let width   = window.getComputedStyle(thOne, null).getPropertyValue('width');
+
+    const getTop = () => {
+      return document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop;
+    }
+
+    const getOffsetTop = (obj) => {
+      let top = obj.offsetTop;
+      if (obj.offsetParent != null) {
+        top += getOffsetTop(obj.offsetParent);
+      }
+      return top;
+    };
+
+    let offTop    = getOffsetTop(this.selfElement.getElementsByTagName('tr')[0]);
+    let offHeight = this.selfElement.offsetHeight;
+
+    window.onscroll = () => {
+      if (getTop() > offTop && getTop() < (offTop + offHeight)) {
+        this.selfElement.getElementsByTagName('tr')[0].style.position = 'fixed';
+        Array.from(document.getElementsByTagName('th')).forEach( (item) => {
+          item.style.height  = height;
+          item.style.width   = width;
+          item.style.opacity = '.8';
+        })
+      } else {
+        this.selfElement.getElementsByTagName('tr')[0].style.position = 'relative';
+      }
+    }
+  }
   setStyle() {
     this.selfElement.style.width  = this.tableWidth;
     this.selfElement.style.height = this.tableHeight;
