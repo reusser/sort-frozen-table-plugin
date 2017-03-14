@@ -1,8 +1,11 @@
 ##sort-table-plugin
+
 ##介绍
+
 快速生成可排序表格
 <br>
 ##使用方法
+
 ###HTML部分 例如：
 
 	<!DOCTYPE html>
@@ -25,6 +28,7 @@
 	</html>
 
 ###配置部分
+
 ###修改config.js的内容自定义配置信息
 	/**
 	 * [config description]
@@ -60,6 +64,7 @@
 	}
 	//样式自行在所用的css文件中添加
 ###除表格宽高的其他样式可以自行在css文件中根据需要修改
+
 ##一些例子
 	  th: ['姓名', '高数', '线代', '概率论', '离散数学', '数据结构'],
 	  sortSwitch: [0, 1, 1, 1, 1, 1],
@@ -71,4 +76,5 @@
 	  isFrozen: true,
 此时开启了表头冻结功能，当页面向下滚动，使得第一行已经在屏幕外时，则第一行则变成始终固定在屏幕最上方
 <br>
-[效果预览](https://Reusjs.github.io/sort-table-plugin/task38.html "demo")
+<br>
+[效果预览](https://Reusjs.github.io/sort-frozen-table-plugin/task38.html "demo")
