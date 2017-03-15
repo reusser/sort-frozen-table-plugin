@@ -1,4 +1,4 @@
-## sort-table-plugin
+## sort-frozen-table-plugin
 
 <br>
 
@@ -21,7 +21,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  	<title>UI组件之排序表格</title>
+  	<title>UI组件之冻结排序表格</title>
 	<link rel="stylesheet" type="text/css" href="task38.css">
 	<!--引入基础样式-->
 	</head>
